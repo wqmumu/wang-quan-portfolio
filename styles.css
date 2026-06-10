@@ -121,8 +121,8 @@ a {
 .hero {
   display: grid;
   min-height: calc(100vh - 68px);
-  grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.78fr);
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(0, 620px) minmax(360px, 1fr);
+  gap: clamp(44px, 7vw, 108px);
   align-items: center;
   padding: 72px 0 54px;
 }
@@ -191,8 +191,8 @@ h2 {
 }
 
 h1 {
-  max-width: 770px;
-  font-size: clamp(3.6rem, 8.2vw, 7.9rem);
+  max-width: 620px;
+  font-size: clamp(3.35rem, 6.85vw, 6.9rem);
 }
 
 h2 {
@@ -260,6 +260,8 @@ h3 {
 
 .hero-visual {
   min-width: 0;
+  width: min(100%, 520px);
+  justify-self: end;
 }
 
 .signal-panel {
