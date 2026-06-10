@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Roboto+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=5" />
+    <link rel="stylesheet" href="./styles.css?v=6" />
   </head>
   <body>
     <header class="site-header" data-elevated="false">
@@ -71,8 +71,8 @@
             </div>
             <div class="signal-grid">
               <div>
-                <span class="metric-value">02</span>
-                <span class="metric-label">featured systems</span>
+                <span class="metric-value">03</span>
+                <span class="metric-label">featured projects</span>
               </div>
               <div>
                 <span class="metric-value">20</span>
@@ -145,7 +145,7 @@
       <section class="section-shell" id="projects">
         <div class="section-heading reveal">
           <p class="eyebrow">Featured projects</p>
-          <h2>Two projects that define the job-search story.</h2>
+          <h2>Three projects that define the job-search story.</h2>
         </div>
 
         <article class="featured-project ai-project reveal">
@@ -248,12 +248,65 @@
             </div>
           </div>
         </article>
+
+        <article class="featured-project game-project reveal">
+          <div class="project-copy">
+            <div class="project-kicker">Unity game systems</div>
+            <h3>Unity Gate Multiplier Game Prototype</h3>
+            <p>
+              A Unity hyper-casual mobile game prototype for CM3070, focused on
+              gate multiplier choices, dynamic level pacing, troop formation,
+              enemy combat, and reusable gameplay systems.
+            </p>
+            <ul class="project-highlights">
+              <li>Built dynamic gate-pair generation, enemy scaling, boss waves, and final gate spawning.</li>
+              <li>Implemented troop pooling, leader tracking, formation offsets, and combat engagement state.</li>
+              <li>Created add/subtract/multiply/divide gate logic with projectile interaction and pair deactivation.</li>
+              <li>Structured enemy, audio, menu, and UI behavior through reusable C# components.</li>
+            </ul>
+            <div class="chip-row">
+              <span>Unity 6</span>
+              <span>C#</span>
+              <span>URP</span>
+              <span>Input System</span>
+              <span>Mobile game prototype</span>
+            </div>
+            <a
+              class="text-link"
+              href="https://github.com/wqmumu/CM3070-Final-Project"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View game code
+            </a>
+          </div>
+          <div class="project-visual">
+            <div class="game-stage" aria-hidden="true">
+              <div class="game-lane">
+                <span class="lane-line"></span>
+                <span class="gate-pill add">x2</span>
+                <span class="gate-pill subtract">-5</span>
+                <span class="troop-dot troop-one"></span>
+                <span class="troop-dot troop-two"></span>
+                <span class="troop-dot troop-three"></span>
+                <span class="enemy-dot enemy-one"></span>
+                <span class="enemy-dot enemy-two"></span>
+                <span class="boss-block">BOSS</span>
+              </div>
+              <div class="game-hud">
+                <span>troops 24</span>
+                <span>gate pair 07</span>
+                <span>combat ready</span>
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section class="section-shell coursework-section" id="coursework">
         <div class="section-heading reveal">
           <p class="eyebrow">Project gallery</p>
-          <h2>More work beyond the two featured systems.</h2>
+          <h2>More work beyond the featured projects.</h2>
         </div>
 
         <div class="filter-bar reveal" aria-label="Coursework filters">
@@ -284,7 +337,7 @@
             <span class="course-index">01</span>
             <h3>ThriftMate Mobile App</h3>
             <p>Expo React Native app with browse, detail, and favorites flows.</p>
-            <span>Expo · React Native</span>
+            <span class="course-tech">Expo · React Native</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -305,7 +358,7 @@
             <span class="course-index">02</span>
             <h3>Django E-Learning Platform</h3>
             <p>Django/DRF coursework platform with courses, accounts, and chat code.</p>
-            <span>Django · DRF · Channels</span>
+            <span class="course-tech">Django · DRF · Channels</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -326,7 +379,7 @@
             <span class="course-index">03</span>
             <h3>Student Performance Database</h3>
             <p>Node/Express/EJS database-backed web app for student records.</p>
-            <span>Node.js · Express · EJS</span>
+            <span class="course-tech">Node.js · Express · EJS</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -345,7 +398,7 @@
             <span class="course-index">04</span>
             <h3>IMDB Sentiment Analysis</h3>
             <p>Jupyter notebook project for NLP sentiment analysis.</p>
-            <span>Python · Jupyter · NLP</span>
+            <span class="course-tech">Python · Jupyter · NLP</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -367,7 +420,7 @@
             <span class="course-index">05</span>
             <h3>Database Web Blog Platform</h3>
             <p>Express/EJS/SQLite app with author and reader flows.</p>
-            <span>Express · SQLite</span>
+            <span class="course-tech">Express · SQLite</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -388,7 +441,7 @@
             <span class="course-index">06</span>
             <h3>OtoDecks DJ App</h3>
             <p>C++/JUCE audio programming coursework project.</p>
-            <span>C++ · JUCE</span>
+            <span class="course-tech">C++ · JUCE</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -409,7 +462,7 @@
             <span class="course-index">07</span>
             <h3>Graphic Programming Final</h3>
             <p>Interactive creative coding project using p5.js.</p>
-            <span>JavaScript · p5.js</span>
+            <span class="course-tech">JavaScript · p5.js</span>
             <b class="card-action">View details</b>
           </article>
           <article
@@ -428,7 +481,29 @@
             <span class="course-index">08</span>
             <h3>Agile Budget Planner</h3>
             <p>Budget planning web app with chart-based visualization.</p>
-            <span>Express · Chart.js</span>
+            <span class="course-tech">Express · Chart.js</span>
+            <b class="card-action">View details</b>
+          </article>
+          <article
+            class="course-card reveal"
+            data-kind="systems"
+            data-project="unity-game"
+            tabindex="0"
+            role="button"
+            aria-label="Open details for Unity Gate Multiplier Game"
+          >
+            <div class="course-preview game-preview" aria-hidden="true">
+              <div class="game-mini">
+                <span class="mini-gate">x2</span>
+                <span class="mini-gate bad">-5</span>
+                <i></i><i></i><i></i>
+                <strong></strong>
+              </div>
+            </div>
+            <span class="course-index">09</span>
+            <h3>Unity Gate Multiplier Game</h3>
+            <p>CM3070 mobile game prototype with procedural gates and troop combat.</p>
+            <span class="course-tech">Unity · C# · Game Systems</span>
             <b class="card-action">View details</b>
           </article>
         </div>
@@ -473,6 +548,15 @@
               <h2 id="project-dialog-title" data-project-title>Project title</h2>
               <p class="project-dialog-summary" data-project-summary></p>
               <div class="chip-row" data-project-stack></div>
+              <a
+                class="project-repo-link"
+                data-project-repo
+                target="_blank"
+                rel="noreferrer"
+                hidden
+              >
+                Open GitHub repository
+              </a>
             </div>
             <div class="project-dialog-section">
               <h3>Project logic</h3>
@@ -485,7 +569,7 @@
             <div class="project-dialog-code">
               <div class="code-topline">
                 <span data-code-label>code summary</span>
-                <span>private repo</span>
+                <span data-code-repo-status>private repo</span>
               </div>
               <pre><code data-project-code></code></pre>
             </div>
@@ -517,7 +601,7 @@
           </div>
           <div class="skill-block reveal">
             <h3>Tools</h3>
-            <p>Git, GitHub, pnpm, npm, ESLint, TypeScript, Render/Railway-style Node deployment</p>
+            <p>Git, GitHub, pnpm, npm, ESLint, TypeScript, Unity, C#, Render/Railway-style Node deployment</p>
           </div>
         </div>
       </section>
@@ -571,6 +655,6 @@
       <span>AI Application · Full-Stack Development · Singapore</span>
     </footer>
 
-    <script src="./script.js?v=5"></script>
+    <script src="./script.js?v=6"></script>
   </body>
 </html>

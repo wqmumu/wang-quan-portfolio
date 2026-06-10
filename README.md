@@ -2,6 +2,8 @@
 
 Static portfolio website for job search use.
 
+Live site: https://wang-quan-portfolio-site.vercel.app
+
 ## Structure
 
 - `index.html` - main portfolio page
@@ -25,6 +27,12 @@ http://localhost:4173
 ## Deployment
 
 This site can be deployed as a static site on Vercel, GitHub Pages, Netlify, or any static hosting provider. The recommended path is to keep the source code in GitHub and publish the live site through Vercel.
+
+Current production deployment:
+
+```text
+https://wang-quan-portfolio-site.vercel.app
+```
 
 ## Before Publishing
 

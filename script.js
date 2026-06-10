@@ -16,6 +16,8 @@ const projectDetails = {
     summary:
       "A React Native coursework app for browsing thrift items, viewing item details, and saving favorites. It is useful as a small mobile UI example because the flow is easy to understand and screen-based.",
     stack: ["Expo", "React Native", "React Navigation", "AsyncStorage"],
+    repoStatus: "public repo",
+    repoUrl: "https://github.com/wqmumu/thriftmate-mobile-app",
     logic: [
       "Browse screen displays item cards from local/mock data.",
       "Detail screen receives item data through navigation params.",
@@ -105,6 +107,8 @@ app.post("/students", async (req, res) => {
     summary:
       "A Python/Jupyter NLP coursework project for sentiment analysis on IMDB movie reviews. It demonstrates data preprocessing, model training, evaluation, and result explanation.",
     stack: ["Python", "Jupyter Notebook", "NLP", "Machine Learning"],
+    repoStatus: "public repo",
+    repoUrl: "https://github.com/wqmumu/imdb-sentiment-analysis",
     logic: [
       "Load review text and sentiment labels into a notebook workflow.",
       "Clean/tokenize text before converting it into numerical features.",
@@ -188,6 +192,8 @@ router.post("/author/articles", async (req, res) => {
     summary:
       "An interactive p5.js creative coding project. It shows visual interaction, canvas-based animation, and graphics programming fundamentals.",
     stack: ["JavaScript", "p5.js", "Interaction", "Canvas"],
+    repoStatus: "public repo",
+    repoUrl: "https://github.com/wqmumu/graphic-programming-final",
     logic: [
       "Setup initializes the canvas and visual state.",
       "Draw loop updates animation and user interaction every frame.",
@@ -236,6 +242,48 @@ function draw() {
   }],
 };`,
   },
+  "unity-game": {
+    category: "Unity game systems",
+    title: "Unity Gate Multiplier Game Prototype",
+    summary:
+      "A Unity-based CM3070 final project that prototypes a hyper-casual mobile game with gate multiplier choices, troop formation, dynamic level generation, enemy combat, UI, and audio systems.",
+    stack: ["Unity 6", "C#", "URP", "Input System", "Mobile Game Prototype"],
+    repoStatus: "public repo",
+    repoUrl: "https://github.com/wqmumu/CM3070-Final-Project",
+    logic: [
+      "LevelGenerator creates gate pairs, adjusts enemy difficulty from troop count, and spawns boss/final encounters.",
+      "Gate logic applies add, subtract, multiply, and divide operations while disabling the sibling gate in the same pair.",
+      "TroopManager pools troop instances, tracks the leader, manages formation offsets, and broadcasts combat state.",
+      "EnemyBase defines a reusable patrol, chase, attack, damage, and death lifecycle for enemies and bosses.",
+    ],
+    discuss: [
+      "How procedural level pacing and troop-count balancing work together.",
+      "How object pooling and event-driven state reduce repeated scene work.",
+      "How gate, projectile, troop, enemy, audio, menu, and UI responsibilities are separated.",
+      "What I would improve next: ScriptableObject configs, mobile profiling, and clearer testing/debug tooling.",
+    ],
+    label: "Unity C# gate logic",
+    code: `public enum GateType {
+  Add,
+  Subtract,
+  Multiply,
+  Divide
+}
+
+private void ApplyGate(TroopManager manager) {
+  switch (gateType) {
+    case GateType.Add:
+      manager.AddTroops(value);
+      break;
+    case GateType.Multiply:
+      manager.MultiplyTroops(value);
+      break;
+  }
+
+  siblingGate?.Deactivate();
+  GateTriggered?.Invoke(pairId);
+}`,
+  },
 };
 
 function updateHeader() {
@@ -264,7 +312,21 @@ function openProject(projectId) {
   projectDialog.querySelector("[data-project-summary]").textContent =
     project.summary;
   projectDialog.querySelector("[data-code-label]").textContent = project.label;
+  projectDialog.querySelector("[data-code-repo-status]").textContent =
+    project.repoStatus || "private repo";
   projectDialog.querySelector("[data-project-code]").textContent = project.code;
+
+  const repoLink = projectDialog.querySelector("[data-project-repo]");
+  if (repoLink) {
+    if (project.repoUrl) {
+      repoLink.href = project.repoUrl;
+      repoLink.textContent = `Open ${project.title} on GitHub`;
+      repoLink.hidden = false;
+    } else {
+      repoLink.removeAttribute("href");
+      repoLink.hidden = true;
+    }
+  }
 
   const stackTarget = projectDialog.querySelector("[data-project-stack]");
   stackTarget.innerHTML = "";

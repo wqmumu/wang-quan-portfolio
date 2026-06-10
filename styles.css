@@ -529,6 +529,25 @@ h3 {
   margin-top: 24px;
 }
 
+.text-link,
+.project-repo-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--green);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.text-link::after,
+.project-repo-link::after {
+  content: "->";
+  color: var(--coral);
+}
+
 .project-visual {
   min-width: 0;
 }
@@ -761,6 +780,127 @@ h3 {
   font-size: 0.8rem;
 }
 
+.game-stage {
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(90deg, rgba(255, 253, 247, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 253, 247, 0.08) 1px, transparent 1px),
+    #20221f;
+  background-size: 34px 34px;
+  box-shadow: 18px 18px 0 var(--yellow);
+}
+
+.game-lane {
+  position: absolute;
+  inset: 30px 32px 78px;
+  border: 1px solid rgba(247, 244, 236, 0.18);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(90deg, transparent 0 47%, rgba(247, 244, 236, 0.18) 48% 52%, transparent 53%),
+    rgba(255, 255, 255, 0.04);
+}
+
+.lane-line {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  left: 22px;
+  height: 2px;
+  background: rgba(247, 244, 236, 0.2);
+}
+
+.gate-pill,
+.troop-dot,
+.enemy-dot,
+.boss-block {
+  position: absolute;
+  z-index: 1;
+}
+
+.gate-pill {
+  display: grid;
+  top: 28px;
+  width: 72px;
+  height: 104px;
+  place-items: center;
+  border: 2px solid var(--paper);
+  border-radius: 999px 999px 8px 8px;
+  color: var(--paper);
+  font-family: "Roboto Mono", monospace;
+  font-weight: 800;
+}
+
+.gate-pill.add {
+  left: 26%;
+  background: var(--green);
+}
+
+.gate-pill.subtract {
+  right: 26%;
+  background: var(--coral);
+}
+
+.troop-dot {
+  width: 22px;
+  height: 22px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: troop-move 2.6s ease-in-out infinite;
+}
+
+.troop-one { bottom: 58px; left: 16%; }
+.troop-two { bottom: 84px; left: 21%; animation-delay: 140ms; }
+.troop-three { bottom: 35px; left: 24%; animation-delay: 280ms; }
+
+.enemy-dot {
+  right: 18%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--paper);
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
+.enemy-one { bottom: 56px; }
+.enemy-two { bottom: 108px; right: 24%; }
+
+.boss-block {
+  right: 40px;
+  bottom: 42px;
+  padding: 16px 14px;
+  border: 2px solid var(--paper);
+  border-radius: var(--radius);
+  background: var(--coral);
+  color: var(--paper);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.game-hud {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.game-hud span {
+  padding: 7px 10px;
+  border: 1px solid rgba(247, 244, 236, 0.22);
+  border-radius: 999px;
+  color: rgba(247, 244, 236, 0.72);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.68rem;
+}
+
 .coursework-section,
 .skills-section,
 .contact-section {
@@ -854,7 +994,7 @@ h3 {
   line-height: 1.58;
 }
 
-.course-card > span:last-child {
+.course-tech {
   display: block;
   margin-top: 20px;
   color: var(--green);
@@ -905,7 +1045,8 @@ h3 {
 .blog-mini,
 .deck-mini,
 .canvas-mini,
-.budget-mini {
+.budget-mini,
+.game-mini {
   position: relative;
   z-index: 1;
 }
@@ -1124,6 +1265,61 @@ h3 {
 .budget-mini i:nth-child(2) { height: 78%; background: var(--yellow); }
 .budget-mini i:nth-child(3) { height: 60%; background: var(--coral); }
 
+.game-mini {
+  width: 186px;
+  height: 110px;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  background: #20221f;
+}
+
+.mini-gate {
+  position: absolute;
+  top: 16px;
+  display: grid;
+  width: 48px;
+  height: 64px;
+  place-items: center;
+  border-radius: 999px 999px 6px 6px;
+  background: var(--green);
+  color: var(--paper);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.mini-gate:first-child {
+  left: 38px;
+}
+
+.mini-gate.bad {
+  right: 38px;
+  background: var(--coral);
+}
+
+.game-mini i {
+  position: absolute;
+  bottom: 18px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--yellow);
+}
+
+.game-mini i:nth-of-type(1) { left: 24px; }
+.game-mini i:nth-of-type(2) { left: 48px; }
+.game-mini i:nth-of-type(3) { left: 72px; }
+
+.game-mini strong {
+  position: absolute;
+  right: 20px;
+  bottom: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--cyan);
+}
+
 .learning-archive {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -1229,6 +1425,10 @@ h3 {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.62;
+}
+
+.project-repo-link[hidden] {
+  display: none;
 }
 
 .project-dialog-section {
@@ -1380,6 +1580,16 @@ body.dialog-open {
   }
 }
 
+@keyframes troop-move {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(24px);
+  }
+}
+
 @media (max-width: 1060px) {
   .hero,
   .intro-video-section,
@@ -1464,6 +1674,15 @@ body.dialog-open {
 
   .desktop-mock {
     box-shadow: 8px 8px 0 var(--green);
+  }
+
+  .game-stage {
+    min-height: 300px;
+    box-shadow: 8px 8px 0 var(--yellow);
+  }
+
+  .game-lane {
+    inset: 22px 18px 78px;
   }
 
   .split-visual {
