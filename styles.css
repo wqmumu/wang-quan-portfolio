@@ -372,7 +372,7 @@ h3 {
   grid-template-columns: minmax(0, 0.62fr) minmax(340px, 1fr);
   gap: clamp(34px, 6vw, 74px);
   align-items: center;
-  margin-bottom: clamp(112px, 12vw, 160px);
+  margin-bottom: clamp(54px, 6vw, 82px);
   padding: clamp(28px, 5vw, 50px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
