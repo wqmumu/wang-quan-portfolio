@@ -4,6 +4,8 @@ Static portfolio website for job search use.
 
 Live site: https://wang-quan-portfolio-site.vercel.app
 
+Video demos: https://www.youtube.com/@%E7%93%9C%E9%A6%92%E5%A4%B4
+
 ## Structure
 
 - `index.html` - main portfolio page
@@ -38,6 +40,7 @@ https://wang-quan-portfolio-site.vercel.app
 
 - Resume download is linked to `assets/Wang_Quan_Resume.pdf`.
 - Intro video is linked from `assets/intro-video.mp4`.
+- YouTube project demos are linked from the hero, video demo section, and contact area.
 - Replace project gallery mock previews with real screenshots when available.
 - Add public GitHub links only after privacy review.
 - Keep the TCM project private unless public release is explicitly approved.
