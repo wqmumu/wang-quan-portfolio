@@ -1830,6 +1830,11 @@ body.dialog-open {
 }
 
 @media (max-width: 720px) {
+  .section-shell {
+    width: calc(100vw - 32px);
+    max-width: 100%;
+  }
+
   .site-header {
     align-items: flex-start;
     gap: 14px;
@@ -1849,7 +1854,7 @@ body.dialog-open {
   }
 
   h1 {
-    font-size: clamp(3rem, 18vw, 4.3rem);
+    font-size: clamp(2.9rem, 15.5vw, 4.1rem);
   }
 
   .hero-actions,
