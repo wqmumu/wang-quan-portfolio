@@ -1645,7 +1645,7 @@ body.dialog-open {
   display: grid;
   grid-template-columns: minmax(360px, 0.95fr) minmax(300px, 0.68fr);
   gap: clamp(32px, 6vw, 84px);
-  align-items: end;
+  align-items: stretch;
   padding: clamp(32px, 5vw, 58px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1663,6 +1663,45 @@ body.dialog-open {
   max-width: 640px;
   font-size: clamp(2.6rem, 5vw, 5.3rem);
   line-height: 0.92;
+}
+
+.contact-panel {
+  display: grid;
+  align-content: center;
+  gap: 22px;
+  min-height: 100%;
+}
+
+.availability-card {
+  padding: 18px;
+  border: 1px solid rgba(22, 22, 22, 0.12);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(240, 184, 77, 0.18), transparent 52%),
+    rgba(255, 253, 247, 0.68);
+}
+
+.availability-card span {
+  display: block;
+  color: var(--green);
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.availability-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  line-height: 1.08;
+}
+
+.availability-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .contact-card .contact-actions {
@@ -1886,6 +1925,10 @@ body.dialog-open {
 
   .contact-card {
     align-items: stretch;
+  }
+
+  .contact-panel {
+    align-content: stretch;
   }
 
   .contact-card h2 {
